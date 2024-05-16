@@ -1,0 +1,11 @@
+x,y=input("Enter a co-ordinate: ").split()
+print(x,y)
+
+a,b,c=input("Enter three values: ").split()
+print(a,b,c)
+
+name,age=input("Enter your name and age: ").split()
+print("My name is {} and my age is {}".format(name,age))
+
+array=list(map(int,input("Enter the list of values: ").split()))
+print(array)

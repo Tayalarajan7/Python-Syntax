@@ -1,0 +1,45 @@
+Dictionary:
+	Dictionaries are used to store data values in key:value pairs.
+
+	A dictionary is a collection which is ordered, changeable and does not
+allow duplicates.
+
+	Note: As of Python version 3.7, dictionaries are ordered. In Python 3.6
+and earlier, dictionaries are unordered.
+
+	Dictionaries are written with curly brackets, and have keys and values.
+
+	Dictionary items are ordered, changeable and does not allow duplicate
+values.
+
+Changeable:
+	Dictionaries are changeable, meaning that we can change, add or remove
+items after the dictionary has been created.
+
+Duplicates not allowed:
+	Dictionaries cannot have two items with the same key.
+
+Note: Duplicate value will override existing values.
+
+Get Items:
+The items() method will return each item in a dictionary, as tuples in a list.
+
+Update Dictionary:
+The update() method will update the dictionary with the items from the given 
+argument.
+
+The argument must be a dictionary, or an iterable object with key:value pairs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,174 @@
+#Creating a list
+fruits = []
+#or
+vegetables = list()
+
+#Adding elements to a list
+fruits.append("Apple")
+fruits.append("Orange")
+vegetables.append("Carrot")
+vegetables.append("Tomato")
+vegetables.append("Beans")
+
+#Getting elements from a list
+print(fruits[0], fruits[1]) #Apple Orange
+print(vegetables[0], vegetables[1]) #Carrot Tomato
+
+#Getting elements from a list reversely
+print(fruits[-1]) #Orange
+
+#Getting elements based on range
+friends = ["Najih", "Sound", "Praveen", "Aff", "Akash"]
+print(friends[0:2])   #["Najih", "Sound"]
+print(friends[:4])    #["Najih", "Sound", "Praveen", "Aff"]
+print(friends[2:])    #["Praveen", "Aff", "Akash"]
+print(friends[-5:-4]) #["Najih"]
+print(friends[-5:-3]) #["Najih", "Sound"]
+print(friends[-5:-2]) #["Najih", "Sound", "Praveen"]
+print(friends[-5:-1]) #["Najih", "Sound", "Praveen", "Aff"]
+print(friends[-5:])   #["Najih", "Sound", "Praveen", "Aff", "Akash"]
+print(friends[-4:])   #["Sound", "Praveen", "Aff", "Akash"]
+
+#Setting value to an element in List
+print(fruits[0]) #Apple
+fruits[0] = "Straberry"
+print(fruits[0]) #Straberry
+
+#Setting value based on range
+print(friends[0:3]) #["Najih", "Sound", "Praveen"]
+friends[0:3] = ["Thanga", "Ashwin", "Sivam"]
+print(friends) #["Thanga", "Ashwin", "Sivam", "Aff", "Akash"]
+
+#Inserting element
+print(fruits[0]) #Apple
+fruits.insert(0,"Lemon")
+print(fruits[0]) #Lemon
+print(fruits) #["Lemon", "Straberry", "Orange"]
+
+#Adding an entire list
+fruits.extend(vegetables)
+print(fruits) #["Lemon", "Straberry", "Orange", "Carrot", "Tomato", "Beans"]
+
+"""Note: The extend() method does not have to append lists, you can add any 
+iterable object (tuples, sets, dictionaries etc.) """
+
+#Removing specified element from the list
+fruits.remove("Carrot")
+fruits.remove("Tomato")
+fruits.remove("Beans")
+print(fruits) #["Lemon", "Straberry", "Orange"]
+
+#Removing specified index
+fruits.pop() #Removes last element if no index specified
+print(fruits) #["Lemon", "Straberry"]
+fruits.pop(0)
+print(fruits) #["Straberry"]
+
+#del keyword also removes specific index
+del fruits[0]
+print(fruits) #[]
+
+#Adding elements to list
+fruits.append("Apple")
+fruits.append("Orange")
+print(fruits) #["Apple", "Orange"]
+
+#The del keyword can also delete the list completely.
+del fruits
+#print(fruits) this will cause an error because you have succsesfully deleted "thislist".
+
+#The clear() method empties the list. The list still remains, but it has no content.
+vegetables.clear()
+print(vegetables) #[]
+
+#Loop through a list
+for x in friends:
+    print(x)
+    
+#Loop Through the Index Numbers
+for x in range(len(friends)):
+    print(friends[x])
+    
+i=0
+while i<len(friends):
+    print(friends[i])
+    i+=1
+    
+#Looping Using List Comprehension
+[print(x) for x in friends]
+[print(x) for x in friends if "k" in x]
+
+#Iterating from 0 to 9
+newlist = [print(x) for x in range(10)]
+#Set all values in the new list to 'hello':
+newlist = ['hello' for x in newlist]
+print(newlist)
+
+#Sort list ascending order
+friends.sort()
+print(friends)
+
+#Sort list descending order
+friends.sort(reverse=True)
+print(friends)
+
+#Customization sort
+#Sort the list based on how close the number is to 50:
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)#[50, 65, 23, 82, 100]
+
+#Case sensitive sorting can give an unexpected result:
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+print(thislist) #["Kiwi", "Orange", "banana", "cherry"]
+
+#Perform a case-insensitive sort of the list:
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower)#["banana", "Orange", "Kiwi", "cherry"]
+print(thislist) #["banana", "cherry", "Kiwi", "Orange"]
+
+#Reverse a list
+friends.reverse()
+print(friends)
+
+#Make a copy of a list with the copy() method:
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+#Or
+
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+
+#Join two list:
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+
+#Or
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+  list1.append(x)
+
+print(list1)
+
+#Or
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+print(list1)
+
+

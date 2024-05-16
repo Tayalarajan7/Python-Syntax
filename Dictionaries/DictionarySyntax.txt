@@ -1,0 +1,137 @@
+#Create a dictionary
+car = {
+    "brand" : "Rolls Royce",
+    "model" : "phantom",
+    "year" : 2020
+}
+print(car) #{"brand" : "Rolls Royce", "model" : "phantom", "year" : 2020}
+
+#Get element based on key
+print(car["brand"]) #Rolls Royce
+
+#Duplicate value will override existing values
+car = {
+    "brand" : "Rolls Royce",
+    "model" : "phantom",
+    "year" : 2020,
+    "year" : 2021
+}
+
+print(car) #{"brand" : "Rolls Royce", "model" : "phantom", "year" : 2021}
+
+#Dictionary length
+print(len(car)) #3
+
+#Dictionary data types String, int, boolean, and list data types:
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+
+#type()
+print(type(thisdict)) #<class 'dict'>
+
+#Accesing item
+print(thisdict["colors"]) #["red", "white", "blue"]
+
+print(thisdict.get("colors")) #["red", "white", "blue"]
+
+#Get list of keys
+print(thisdict.keys()) #dict_keys(["year", "colors", "brand", "electric"])
+
+#Get list of values
+x = car.values()
+print(x) #dict_values([1964, "Ford", "White", "Mustang"])
+
+#items()
+x = car.items()
+print(x) #dict_items([("year", 2020), ("brand", "Ford"), ("model","Mustang")])
+
+#Check if key exists
+if "model" in car:
+    print("Yes model is present in the car")
+
+#Change values
+car["brand"] = "Benz"
+car["model"] = "Maybach"
+print(car) #{"brand" : "Benz", "model" : "Maybach", "year" : 2021}
+
+#Update dictionary
+car.update({"year": 2015})
+print(car["year"]) #2015
+
+"""Note: The update() method will update the dictionary
+with the items from a given argument. If the item does
+not exist, the item will be added."""
+#Trying update with new key value pair
+car.update({"color":"White"})
+print(car["color"]) #White
+
+#Adding items
+car["price"] = 9000000
+print(car["price"]) #9000000
+
+#Removing items
+car.pop("price")
+print(car) #{'color': 'White', 'brand': 'Benz', 'model': 'Maybach', 'year': 2015}
+
+car.popitem()
+print(car) #{'color': 'White', 'model': 'Maybach', 'year': 2015}
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+print(thisdict) #{'year': 1964, 'brand': 'Ford'}
+
+#Deleting entire dictionary
+del thisdict
+
+#clear method empties the dictionary
+car.clear()
+print(car) #{}
+
+#Looping through dictionaries
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for key in thisdict:
+    print(key, thisdict[key])
+    
+for key in thisdict.keys():
+    print(key)
+    
+for value in thisdict.values():
+    print(value)
+    
+for key,value in thisdict.items():
+    print(key,value)
+    
+newdict = thisdict.copy()
+print(newdict) #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+newdict1 = dict(thisdict)
+print(newdict1) #{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+
+#nested dictionary
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily)

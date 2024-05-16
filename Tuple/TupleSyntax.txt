@@ -1,0 +1,104 @@
+#Create a Tuple:
+fruits = ("Apple", "Banana", "Orange")
+print(fruits) #("Apple", "Banana", "Orange")
+
+#Getting elements from a Tuple:
+print(fruits[0]) #Apple
+
+#Negative indexing
+"""
+Negative indexing means start from the end.
+
+-1 refers to the last item, -2 refers to the second last item etc.
+"""
+print(fruits[-1]) #Orange
+
+#Range of Indexes
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:5]) #("Cherry", "Orange", "kiwi")
+print(thistuple[:4]) #("apple", "banana", "cherry", "orange")
+print(thistuple[2:]) #("cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[-4:-1]) #("orange", "kiwi", "melon")
+#Note: The search will start at index 2 (included) and end at index 5 (not included).
+
+#Check if Item Exists
+if "apple" in thistuple:
+    print("in yes")
+
+#Case sensitive
+if "Apple" not in thistuple:
+    print("not in yes")
+
+#Length of a Tuple:
+print(len(fruits)) #3
+
+#Create a Tuple with one item:
+#NOT a tuple
+myPet = ("Julie")
+print(type(myPet)) #str
+
+myPet = ("Julie",)
+print(type(myPet)) #tuple
+
+#Convert the Tuple into List and update
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+
+print(x) #("apple", "Kiwi", "cherry")
+
+#Append item in Tuple
+x = ("apple", "goa")
+y = list(x)
+y.append("mango")
+x = tuple(y)
+
+print(x) #("apple", "goa", "mango")
+
+#Add Tuple to a Tuple:
+a = ("a",)
+b = ("b",)
+c = a+b
+print(c) #("a", "b")
+
+#Remove items from a Tuple
+y = list(x)
+y.remove("apple")
+x = tuple(y)
+
+print(x) #("goa", "mango")
+
+#Delete Tuple completely
+y = list(x)
+del y
+#x = tuple(y) this will raise an error because the tuple no longer exists
+
+#Unpacking a Tuple
+x = ("a", "b", "c", "d", "e")
+(vowels1, *consonants , vowels2) = x
+print(vowels1,vowels2,consonants) #a e ["b", "c", "d"]
+
+#Looping a Tuple
+#for each loop
+for alphabets in x:
+    print(alphabets)
+    
+#for loop
+for i in range(len(x)):
+    print(x[i])
+    
+#while loop
+i=0
+while i<len(x):
+    print(x[i])
+    i+=1
+    
+#Join Tuples
+tuple1 = ("peace", "happy", "joy")
+tuple2 = ("sorrow", "pain", "suffering")
+life = tuple1+tuple2
+print(life) #("peace", "happy", "joy", "sorrow", "pain", "suffering")
+life = tuple1 * 2
+print(life) #("peace", "happy", "joy", "peace", "happy", "joy")
+    

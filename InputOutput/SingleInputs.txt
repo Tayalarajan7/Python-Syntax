@@ -1,0 +1,6 @@
+age=int(input("Enter your age: "))
+weight=float(input("Enter your weight: "))
+name=str(input("Enter your name: "))
+print(age,type(age))
+print(weight,type(weight))
+print(name,type(name))

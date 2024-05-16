@@ -1,0 +1,76 @@
+#print statement
+print("Syntax check")
+
+#indentation
+if 5>3:
+    print("5 is greater than 3")
+    
+#single line comment
+"""
+This is multiline comment
+"""
+'''
+This is multiline comment 
+'''
+
+#assigning value
+x=5
+y="This is y"
+z=0.5
+print(x,y,z)
+
+#type() -> To check type of a variable
+print(type(x)) #int
+print(type(y)) #str
+print(type(z)) #float
+
+#casting
+x=int(10)
+y=str("Tayal")
+z=float(2.0)
+print(x,y,z)
+
+#many value multiple variable
+x, y, z = 1,2,3
+print(x,y,z)
+
+#one value to many variable
+x=y=z=1
+print(x,y,z)
+
+#unpack a collection
+fruits = ['apple','banana','orange']
+x, y, z = fruits
+print(x, y, z)
+
+#Output Variables
+x = "awesome"
+print("This is "+x)
+
+#You can also use the + character to add a variable to another variable:
+x = 'python is '
+y = 'awesome'
+z = x+y
+print(z)
+
+#For numbers, the + character works as a mathematical operator:
+x = 5
+y = 10
+print(x+y)
+
+#The global keyword
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+print("Python is " + x)
+
+#To change the value of a global variable inside a function, refer to the variable by using the global keyword:
+x = "awesome"
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+print("Python is " + x)

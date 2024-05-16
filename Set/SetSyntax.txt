@@ -1,0 +1,110 @@
+#Set do not allow duplicate values
+thisset = {"apple", "banana", "cherry", "apple"}
+
+print(thisset) #{"apple", "banana", "cherry"}
+
+#Length of a Set
+print(len(thisset)) #3
+
+#Set item data types
+setDataTypes = {2, True, "Hello World!"}
+print(setDataTypes) #{2, True, "Hello World!"}--Unordered
+
+#type()
+print(type(thisset)) #<class 'set'>
+
+alphaSet = set(("a", "b", "c"))
+print(alphaSet) #{"c", "b", "a"}--Unordered
+
+#Looping through the Set
+for i in thisset:
+    print(i) #apple cherry banana-unordered
+    
+#Check if element present in the set
+if "banana" in thisset:
+    print("Yes banana is present in the set")
+    
+#Adding element in a Set
+countries = {"India", "USA", "UK", "France"}
+countries.add("Australia")
+countries.add("Japan")
+print(len(countries)) #6
+ 
+#To add item from another set to current set use update
+capitals = {"Delhi", "Washington", "London"}
+countries.update(capitals)
+print(len(countries)) #9
+
+#Add any iterables(list, tuple, set, dict)
+importantCity = ["chennai", "Los Angles", "Melbourne"]
+countries.update(importantCity)
+print(len(countries)) #12
+
+
+#Removing element in a list
+countries.remove("India")
+# If the item to remove does not exist, remove() will raise an error.
+print(len(countries)) #11
+
+countries.discard("Japan")
+print(len(countries)) #10
+#If the item to remove does not exist, discard() will NOT raise an error.
+
+"""pop() method to remove an item, but this method will
+remove the last item. Remember that sets are unordered,
+so you will not know what item that gets removed.
+The return value of the pop() method is the removed 
+item."""
+
+print(countries.pop()) #Australia-unordered
+
+#clear() method empties the set
+countries.clear()
+print(len(countries)) #0
+
+#del keyword will delete the set completely
+del countries
+# print(countries) compilation error will be thrown since countries gets deleted completely
+
+#Loop sets
+#for Loop
+for fruits in thisset:
+    print(fruits) #apple cherry banana-unordered
+    
+#Join sets union() update()
+vegetables = {"spinach", "tomato", "drumstick"}
+healthyfoods = thisset.union(vegetables)
+print(healthyfoods) #{"spinach", "tomato", "drumstick", "apple", "cherry", "banana"}-unordered
+vegetables = {"spinach", "tomato", "drumstick"}
+healthyfoods = thisset.update(vegetables)
+print(healthyfoods) #none
+print(thisset) #{"spinach", "tomato", "drumstick", "apple", "cherry", "banana"}-unordered
+
+#Both union() and update() will remove any duplicate elements
+
+#Keep the duplicates
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.intersection_update(y)
+print(x) #{"apple"}
+
+#Common in both the sets
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+z = x.intersection(y)
+print(z) #{"apple"}
+
+#Keep All, But NOT the Duplicates
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.symmetric_difference_update(y)
+
+print(x) #{"banana", "google", "microsoft", "cherry"}-unordered
+#symmetric_difference()
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.symmetric_difference(y)
+
+print(z) #{"banana", "google", "microsoft", "cherry"}-unordered
